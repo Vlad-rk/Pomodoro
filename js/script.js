@@ -1,8 +1,11 @@
 const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
-let chosenTime = 1500
+const activityLabel = document.getElementById("activityLabel")
+let chosenWorkTime = 1500
+let chosenBreakTime = 5
 let time = 1500
 let start = false
+let work = true
 
 setInterval(changeTime, 1000)
 
@@ -18,6 +21,18 @@ startResetButton.addEventListener('click',()=>{
 });
 
 function changeTime(){
+    if(time == 0){
+        if(work){
+            work = false
+            time = chosenBreakTime
+            activityLabel.textContent = "Pause"
+        }else{
+            work = true
+            time = chosenWorkTime
+            activityLabel.textContent = "Travail"
+        }
+    }
+
     if(start){
         time--
         setTimerText()
@@ -25,10 +40,13 @@ function changeTime(){
 }
 
 function resetTimer(){
-    time = chosenTime
+    time = chosenWorkTime
     setTimerText()
+    activityLabel.textContent = "Travail"
 }
 
 function setTimerText(){
-    timerText.textContent = time
+    let minutes = Math.trunc(time/60)
+    let secondes = time%60
+    timerText.textContent = (minutes + ":" + secondes)
 }
