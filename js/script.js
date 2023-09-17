@@ -1,9 +1,9 @@
 const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
-let chosenWorkTime = 1500
+let chosenWorkTime = 660
 let chosenBreakTime = 5
-let time = 1500
+let time = 660
 let start = false
 let work = true
 
@@ -48,5 +48,18 @@ function resetTimer(){
 function setTimerText(){
     let minutes = Math.trunc(time/60)
     let secondes = time%60
-    timerText.textContent = (minutes + ":" + secondes)
+
+    let minutesString = "" + minutes
+
+    let secondesString = "" + secondes
+
+    if(minutesString.length == 1){
+        minutesString = "0" + minutesString
+    }
+
+    if(secondesString.length == 1){
+        secondesString = "0" + secondesString
+    }
+
+    timerText.textContent = (minutesString + ":" + secondesString)
 }
