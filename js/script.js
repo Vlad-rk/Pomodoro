@@ -2,9 +2,11 @@ const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
 const buttonPicture = document.getElementById("buttonPicture")
+const workTimeInput = document.getElementById("workInput")
+const breakTimeInput = document.getElementById("breakInput")
 
-let chosenWorkTime = 10
-let chosenBreakTime = 5
+let chosenWorkTime = 1500
+let chosenBreakTime = 300
 let time = 10
 let start = false
 let work = true
@@ -21,6 +23,13 @@ startResetButton.addEventListener('click',()=>{
         buttonPicture.setAttribute("src", "pictures/reset.svg")
     }
 });
+
+workTimeInput.addEventListener('change',()=>{
+    console.log(workTimeInput.value)
+    chosenWorkTime = workTimeInput.value
+});
+
+
 
 function changeTime(){
     if(time == 0){
