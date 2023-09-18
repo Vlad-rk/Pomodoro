@@ -26,7 +26,13 @@ startResetButton.addEventListener('click',()=>{
 
 workTimeInput.addEventListener('change',()=>{
     console.log(workTimeInput.value)
-    chosenWorkTime = workTimeInput.value
+    chosenWorkTime = workTimeInput.value * 60
+    resetTimer()
+});
+
+breakTimeInput.addEventListener('change',()=>{
+    console.log(breakTimeInput.value)
+    chosenBreakTime = breakTimeInput.value * 60
 });
 
 
