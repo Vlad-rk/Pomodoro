@@ -1,6 +1,8 @@
 const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
+const buttonPicture = document.getElementById("buttonPicture")
+
 let chosenWorkTime = 1500
 let chosenBreakTime = 5
 let time = 1500
@@ -13,10 +15,10 @@ startResetButton.addEventListener('click',()=>{
     if(start){
         start = false
         resetTimer()
-        startResetButton.textContent = "Commencer"
+        buttonPicture.setAttribute("src", "pictures/play.svg")
     }else{
         start = true
-        startResetButton.textContent = "Réinitialiser"
+        buttonPicture.setAttribute("src", "pictures/reset.svg")
     }
 });
 
