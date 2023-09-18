@@ -1,9 +1,9 @@
 const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
-let chosenWorkTime = 660
+let chosenWorkTime = 1500
 let chosenBreakTime = 5
-let time = 660
+let time = 1500
 let start = false
 let work = true
 
