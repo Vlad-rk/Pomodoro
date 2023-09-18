@@ -3,9 +3,9 @@ const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
 const buttonPicture = document.getElementById("buttonPicture")
 
-let chosenWorkTime = 1500
+let chosenWorkTime = 10
 let chosenBreakTime = 5
-let time = 1500
+let time = 10
 let start = false
 let work = true
 
@@ -28,10 +28,12 @@ function changeTime(){
             work = false
             time = chosenBreakTime
             activityLabel.textContent = "Pause"
+            document.body.style.backgroundColor = "green"
         }else{
             work = true
             time = chosenWorkTime
             activityLabel.textContent = "Travail"
+            document.body.style.backgroundColor = "brown"
         }
     }
 
