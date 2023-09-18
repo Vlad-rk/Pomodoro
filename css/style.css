@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    font-family: Ro;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 header, main{
@@ -28,6 +28,7 @@ h1{
     padding: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+    background-color: rgb(204, 0, 0);
 }
 
 .activity{

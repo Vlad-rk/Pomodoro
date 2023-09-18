@@ -7,7 +7,7 @@ const breakTimeInput = document.getElementById("breakInput")
 
 let chosenWorkTime = 1500
 let chosenBreakTime = 300
-let time = 10
+let time = chosenWorkTime 
 let start = false
 let work = true
 
@@ -25,14 +25,20 @@ startResetButton.addEventListener('click',()=>{
 });
 
 workTimeInput.addEventListener('change',()=>{
-    console.log(workTimeInput.value)
-    chosenWorkTime = workTimeInput.value * 60
-    resetTimer()
+    if(workTimeInput.value >= 1 && Number.isInteger(Number(workTimeInput.value))){
+        chosenWorkTime = workTimeInput.value * 60
+        resetTimer()
+    }else{
+        alert("Veuillez mettre une valeur entière entre 1 et 100")
+    }
 });
 
 breakTimeInput.addEventListener('change',()=>{
-    console.log(breakTimeInput.value)
-    chosenBreakTime = breakTimeInput.value * 60
+    if(breakTimeInput.value >= 1 && Number.isInteger(Number(breakTimeInput.value))){
+        chosenBreakTime = breakTimeInput.value * 60
+    }else{
+        alert("Veuillez mettre une valeur entière entre 1 et 100")
+    }
 });
 
 
