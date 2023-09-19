@@ -1,3 +1,6 @@
+//Author : Vladimir Rekaï
+
+//Elements from the html pages
 const timerText = document.getElementById("timerText")
 const startResetButton = document.getElementById("startResetButton")
 const activityLabel = document.getElementById("activityLabel")
@@ -5,14 +8,18 @@ const buttonPicture = document.getElementById("buttonPicture")
 const workTimeInput = document.getElementById("workInput")
 const breakTimeInput = document.getElementById("breakInput")
 
+//Global variables
 let chosenWorkTime = 1500
 let chosenBreakTime = 300
 let time = chosenWorkTime 
 let start = false
 let work = true
 
+
 setInterval(changeTime, 1000)
 
+
+//Listener for the central button, used both as the start and reset button
 startResetButton.addEventListener('click',()=>{
     if(start){
         start = false
@@ -24,6 +31,8 @@ startResetButton.addEventListener('click',()=>{
     }
 });
 
+
+//Listeners for the inputs used to change the time
 workTimeInput.addEventListener('change',()=>{
     if(workTimeInput.value >= 1 && Number.isInteger(Number(workTimeInput.value))){
         chosenWorkTime = workTimeInput.value * 60
@@ -42,7 +51,7 @@ breakTimeInput.addEventListener('change',()=>{
 });
 
 
-
+//Called every seconds, check if the timer is at zero and change to break or work if it is the case
 function changeTime(){
     if(time == 0){
         if(work){
@@ -64,12 +73,14 @@ function changeTime(){
     }
 }
 
+//Function to reste the timer, using the chosen time and changing back the activity to work
 function resetTimer(){
     time = chosenWorkTime
     setTimerText()
     activityLabel.textContent = "Travail"
 }
 
+//Function to update the timer display. Used every seconds when the timer is running and used when the user changes the time
 function setTimerText(){
     let minutes = Math.trunc(time/60)
     let secondes = time%60

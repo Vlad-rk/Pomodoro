@@ -1,3 +1,6 @@
+/*Author : Vladimir Rekaï*/
+
+/*Style for the all page*/
 body {
     display: flex;
     background-color: brown;
@@ -8,12 +11,14 @@ body {
     font-family: Arial, Helvetica, sans-serif
 }
 
+/*Organization of the page*/
 header, main{
     flex-direction: column;
     display: flex;
     align-items: center;
 }
 
+/*Style for the title*/
 h1{
     border-style: solid;
     border-radius: 100%;
@@ -21,6 +26,7 @@ h1{
     font-size: 3em;
 }
 
+/*Style of the timer*/
 .timer{
     font-size: 5em;
     border-style: solid;
@@ -31,6 +37,7 @@ h1{
     background-color: rgb(204, 0, 0);
 }
 
+/*Style of the activity label (Work or Break)*/
 .activity{
     margin-bottom: 1em;
     font-size: 1.5em;
@@ -40,6 +47,7 @@ h1{
     padding-right: 1em;
 }
 
+/*Style of the button (start or reset)*/
 button{
     margin: 1em;
     padding: 1em;
