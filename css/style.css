@@ -1,6 +1,10 @@
 /*Author : Vladimir Rekaï*/
 
 /*Style for the all page*/
+:root{
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     display: flex;
     background-color: brown;
@@ -8,7 +12,6 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif
 }
 
 /*Organization of the page*/

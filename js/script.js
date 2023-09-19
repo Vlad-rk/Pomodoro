@@ -15,7 +15,7 @@ let time = chosenWorkTime
 let start = false
 let work = true
 
-
+//Call the function "changeTime" every second.
 setInterval(changeTime, 1000)
 
 
@@ -34,20 +34,26 @@ startResetButton.addEventListener('click',()=>{
 
 //Listeners for the inputs used to change the time
 workTimeInput.addEventListener('change',()=>{
-    if(workTimeInput.value >= 1 && Number.isInteger(Number(workTimeInput.value))){
-        chosenWorkTime = workTimeInput.value * 60
-        resetTimer()
-    }else{
-        alert("Veuillez mettre une valeur entière entre 1 et 100")
+    if(!start){
+        if(workTimeInput.value >= 1 && Number.isInteger(Number(workTimeInput.value))){
+            chosenWorkTime = workTimeInput.value * 60
+            resetTimer()
+        }else{
+            alert("Veuillez mettre une valeur entière entre 1 et 100")
+        }
     }
+    
 });
 
 breakTimeInput.addEventListener('change',()=>{
-    if(breakTimeInput.value >= 1 && Number.isInteger(Number(breakTimeInput.value))){
-        chosenBreakTime = breakTimeInput.value * 60
-    }else{
-        alert("Veuillez mettre une valeur entière entre 1 et 100")
+    if(!start){
+        if(breakTimeInput.value >= 1 && Number.isInteger(Number(breakTimeInput.value))){
+            chosenBreakTime = breakTimeInput.value * 60
+        }else{
+            alert("Veuillez mettre une valeur entière entre 1 et 100")
+        }
     }
+    
 });
 
 
